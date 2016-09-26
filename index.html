@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Juego de Gato - Inteligencia Artificial</title>
+    <link rel='stylesheet' type='text/css' href='styles/ui.css'>
+</head>
+
+<body>
+<div class="page-header">
+    <h2 class="text-center">Juego de Gato - Inteligencia Artificial</h2>
+</div>
+
+<div class='container-fluid center-block'>
+    <div class='board center-block row'>
+        <!-- data-indx following cell divs represents cell index in 1D array representation -->
+        <div class='cell' data-indx="0"></div>
+        <div class='cell' data-indx="1"></div>
+        <div class='cell' data-indx="2"></div>
+        <div class='cell' data-indx="3"></div>
+        <div class='cell' data-indx="4"></div>
+        <div class='cell' data-indx="5"></div>
+        <div class='cell' data-indx="6"></div>
+        <div class='cell' data-indx="7"></div>
+        <div class='cell' data-indx="8"></div>
+    </div>
+    <div class='control center-block'>
+        <div class='initial row'>
+            <div class="col-sm-12">
+                <button class="start btn btn-lg btn-success"> Iniciar</button>
+            </div>
+            <div class='starts-game btn-group btn-group-lg centered'>
+                <button type="button" class="btn btn-info player selected" id="X">
+                    Humano
+                </button>
+                <button type="button" class="btn btn-info player not-selected" id="O">
+                    Computadora
+                </button>
+            </div>
+        </div>
+
+        <div class='ingame' id="human">Es tu turno ...</div>
+        <div class='ingame' id="ai">
+            <img src="imgs/robot.png" id="robot" class="robot"/>
+            <p>Turno de Robot ...</p>
+        </div>
+        <div class='ingame' id="won">Ganaste !</div>
+        <div class='ingame' id="lost">Perdiste !</div>
+        <div class='ingame' id="draw">Es un empate !</div>
+    </div>
+</div>
+
+<script src="scripts/bundle.js"></script>
+</body>
+</html>
