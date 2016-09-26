@@ -1,6 +1,5 @@
 class State {
     /*
-     * Represents a state in the game
      * @param old [State]: old state to intialize the new state
      */
     constructor(old) {
@@ -47,26 +46,26 @@ class State {
     isTerminal() {
         var B = this.board;
 
-        //check rows
+        //rows
         for(let i = 0; i <= 6; i = i + 3) {
             if(B[i] !== "E" && B[i] === B[i + 1] && B[i + 1] == B[i + 2]) {
-                this.result = B[i] + "-won"; //update the state result
+                this.result = B[i] + "-won";
                 return true;
             }
         }
 
-        //check columns
+        //columns
         for(let i = 0; i <= 2 ; i++) {
             if(B[i] !== "E" && B[i] === B[i + 3] && B[i + 3] === B[i + 6]) {
-                this.result = B[i] + "-won"; //update the state result
+                this.result = B[i] + "-won";
                 return true;
             }
         }
 
-        //check diagonals
+        //diagonals
         for(let i = 0, j = 4; i <= 2 ; i = i + 2, j = j - 2) {
             if(B[i] !== "E" && B[i] == B[i + j] && B[i + j] === B[i + 2*j]) {
-                this.result = B[i] + "-won"; //update the state result
+                this.result = B[i] + "-won";
                 return true;
             }
         }
