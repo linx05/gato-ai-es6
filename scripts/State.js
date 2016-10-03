@@ -72,7 +72,6 @@ class State {
 
         var available = this.emptyCells();
         if(available.length == 0) {
-            //the game is draw
             this.result = "draw";
             return true;
         }

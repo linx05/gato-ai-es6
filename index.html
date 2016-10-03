@@ -14,7 +14,6 @@
 
 <div class='container-fluid center-block'>
     <div class='board center-block row'>
-        <!-- data-indx following cell divs represents cell index in 1D array representation -->
         <div class='cell' data-indx="0"></div>
         <div class='cell' data-indx="1"></div>
         <div class='cell' data-indx="2"></div>
@@ -27,6 +26,10 @@
     </div>
     <div class='control center-block'>
         <div class='initial row'>
+            <div class = 'difficulty col-sm-12'>
+                <span class = 'level selected' id = "blind">Random</span>
+                <span class = 'level not-selected' id = "master">Perfecto</span>
+            </div>
             <div class="col-sm-12">
                 <button class="start btn btn-lg btn-success"> Iniciar</button>
             </div>

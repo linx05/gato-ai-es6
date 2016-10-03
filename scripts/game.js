@@ -68,6 +68,17 @@ class Game {
         }
     }
 
+    static score(state) {
+        if(state.result === "X-won"){
+            return 10 - state.oMovesCount;
+        }
+        else if(state.result === "O-won") {
+            return - 10 + state.oMovesCount;
+        }
+        else {
+            return 0;
+        }
+    }
 }
 
 export default Game;

@@ -1,12 +1,20 @@
 import AI from "./ai.js";
 import Game from "./game.js"
 import Ui from "./Ui.js";
-import $ from "jquery"
 
 class control {
     constructor() {
+        this.setupDificulty();
         this.setupPlayer();
         this.setupStart();
+    }
+
+    setupDificulty() {
+        $(".level").click(function() {
+            const $this = $(this);
+            $(".level").not($this).removeClass("selected").addClass("not-selected");
+            $this.removeClass("not-selected").addClass("selected");
+        });
     }
 
     setupPlayer() {
@@ -20,8 +28,9 @@ class control {
     setupStart() {
         $(".start").click(x => {
             const player = $(".player.selected").attr("id");
-            if(player) {
-                const aiPlayer = new AI();
+            const aiLevel = $(".selected").attr("id");
+            if(player && aiLevel) {
+                const aiPlayer = new AI(aiLevel);
                 const uiInstance = new Ui();
                 const game = new Game(aiPlayer, uiInstance, player);
 
